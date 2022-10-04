@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/brandly/react-tetris/workflows/.github/workflows/test.yml/badge.svg)
 
-> Embed a game of Tetris in your React app
+> Embed a game of Omni Tetris in your React app
 
 ```shell
 $ npm install --save react-tetris

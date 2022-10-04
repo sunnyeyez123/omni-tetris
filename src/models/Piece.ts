@@ -1,6 +1,6 @@
 import Constants from '../constants';
 
-export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
+export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i'];
 export type Piece = typeof pieces[number];
 export type Rotation = 0 | 1 | 2 | 3;
 
@@ -199,6 +199,33 @@ export const getBlocks = (piece: Piece): number[][][] => {
           [0, 0, 0, 0]
         ]
       ];
+    case 'i':
+      return [
+        [
+          [0, 1, 0, 0],
+          [0, 1, 0, 0],
+          [0, 1, 0, 0],
+          [0, 0, 0, 0]
+        ],
+        [
+          [0, 0, 0, 0],
+          [0, 1, 1, 1],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0]
+        ],
+        [
+          [0, 0, 0, 0],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0]
+        ],
+        [
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [1, 1, 1, 0],
+          [0, 0, 0, 0]
+        ]
+      ];
 
     default: {
       const exhaustiveCheck: never = piece;
@@ -225,6 +252,8 @@ export const getClassName = (piece: Piece | 'ghost'): string => {
       return 'piece-z';
     case 'ghost':
       return 'piece-preview';
+    case 'i':
+      return 'piece-ii';
     default: {
       const exhaustiveCheck: never = piece;
       throw new Error(`Unhandled piece case: ${exhaustiveCheck}`);

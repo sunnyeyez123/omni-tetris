@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import type { Controller } from '../src/components/Tetris';
 
@@ -7,6 +7,19 @@ type Props = {
 };
 
 export default function Controller({ controller }: Props): JSX.Element {
+  useEffect(() => {
+    const keys = ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+    window.addEventListener(
+      'keydown',
+      (event) => {
+        if (keys.includes(event.code)) {
+          event.preventDefault();
+        }
+      },
+      false
+    );
+  }, []);
+
   return (
     <div
       style={{

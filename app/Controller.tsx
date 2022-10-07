@@ -7,6 +7,7 @@ type Props = {
 };
 
 export default function Controller({ controller }: Props): JSX.Element {
+  // Stop game controls from scrolling the page, by preventing their default behavior
   useEffect(() => {
     const keys = ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
     window.addEventListener(

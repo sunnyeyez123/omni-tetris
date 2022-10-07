@@ -31,7 +31,7 @@ const App = () => (
         x: 'FLIP_CLOCKWISE',
         up: 'FLIP_CLOCKWISE',
         p: 'TOGGLE_PAUSE',
-        c: 'HOLD',
+        h: 'HOLD',
         shift: 'HOLD'
       }}
     >

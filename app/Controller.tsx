@@ -51,24 +51,25 @@ export default function Controller({ controller }: Props): JSX.Element {
         </DpadRow>
       </div>
       <div>
-        <Row>
+        <MidRow>
           <HtmlTooltip title="Hard Drop">
             <TopRoundBtn onClick={controller.hardDrop} />
           </HtmlTooltip>
-        </Row>
-        <MidRow>
           <HtmlTooltip title="Hold">
             <LeftRoundBtn onClick={controller.hold} />
           </HtmlTooltip>
+        </MidRow>
+        <MidRow>
           <HtmlTooltip title="Flip Clockwise">
             <RightRoundBtn onClick={controller.flipClockwise} />
           </HtmlTooltip>
-        </MidRow>
-        <Row>
           <HtmlTooltip title="Flip Counter Clockwise">
             <BottomRoundBtn onClick={controller.flipCounterclockwise} />
           </HtmlTooltip>
-        </Row>
+        </MidRow>
+        {/* <Row>
+        
+        </Row> */}
       </div>
     </div>
   );
@@ -146,7 +147,8 @@ const Row = styled.div`
 
 const MidRow = styled(Row)`
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-bottom: 10px;
 `;
 
 const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (

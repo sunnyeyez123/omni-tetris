@@ -50,14 +50,14 @@ export default function Controller({ controller }: Props): JSX.Element {
       </div>
       <div>
         <Row>
-          <RoundBtn onClick={controller.hardDrop} />
+          <TopRoundBtn onClick={controller.hardDrop} />
         </Row>
         <MidRow>
-          <RoundBtn onClick={controller.hold} />
-          <RoundBtn onClick={controller.flipClockwise} />
+          <LeftRoundBtn onClick={controller.hold} />
+          <RightRoundBtn onClick={controller.flipClockwise} />
         </MidRow>
         <Row>
-          <RoundBtn onClick={controller.flipCounterclockwise} />
+          <BottomRoundBtn onClick={controller.flipCounterclockwise} />
         </Row>
       </div>
     </div>
@@ -95,8 +95,38 @@ const RoundBtn = styled.button`
   height: 48px;
   border-radius: 24px;
   border: 2px solid #ddd;
+  background-color: green;
 `;
 
+const LeftRoundBtn = styled.button`
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid #ddd;
+  background-color: #85B8FF;
+`;
+const RightRoundBtn = styled.button`
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid #ddd;
+  background-color: #FFADAD;
+`;
+
+const TopRoundBtn = styled.button`
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid #ddd;
+  background-color: #FFE270;
+`;
+const BottomRoundBtn = styled.button`
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid #ddd;
+  background-color: #95DA9E;
+`;
 const Row = styled.div`
   display: flex;
   justify-content: center;

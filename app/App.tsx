@@ -49,8 +49,8 @@ const App = (): JSX.Element => (
   <Container>
     <Header>
       <Title>Omni Tetris</Title>
-      <SubTitle>Embed a game of Omni Tetris in your React app</SubTitle>
-      <TypedShell>npm install --save react-tetris</TypedShell>
+      <SubTitle>Made by Jasmine (@edensjasmine) and Angel (@aceofarts)</SubTitle>
+      {/* <TypedShell>npm install --save react-tetris</TypedShell> */}
     </Header>
     <VerticallyCenterChildren>
       <GamePanel />

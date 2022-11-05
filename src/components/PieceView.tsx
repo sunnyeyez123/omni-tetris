@@ -9,7 +9,9 @@ const defaultBlock = [
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0]
+
 ] as const;
 
 const PieceView: React.FC<Props> = ({ piece }): JSX.Element => {

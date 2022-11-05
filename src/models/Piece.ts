@@ -753,7 +753,6 @@ export const getClassName = (piece: Piece | 'ghost'): string => {
       return 'piece-JJ';
     case 'o':
       return 'piece-o';
-
     case 'ghost':
       return 'piece-preview';
     default: {

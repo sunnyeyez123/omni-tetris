@@ -1,6 +1,6 @@
 import Constants from '../constants';
 
-export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II', 'LL', 'TT', 'rTT', 'lTT', 'SS', 'ZZ'];
+export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II', 'VV', 'TT', 'rTT', 'lTT', 'SS', 'ZZ'];
 export type Piece = typeof pieces[number];
 export type Rotation = 0 | 1 | 2 | 3;
 
@@ -414,7 +414,7 @@ export const getBlocks = (piece: Piece): number[][][] => {
           [0, 0, 0, 0, 0]
         ]
       ];
-    case 'LL':
+    case 'VV':
       return [
         [
           [0, 1, 0, 0, 0],
@@ -638,8 +638,8 @@ export const getClassName = (piece: Piece | 'ghost'): string => {
       return 'piece-rOO';
     case 'II':
       return 'piece-II';
-    case 'LL':
-      return 'piece-LL';
+    case 'VV':
+      return 'piece-VV';
     case 'TT':
       return 'piece-TT';
     case 'rTT':

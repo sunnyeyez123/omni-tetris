@@ -1,6 +1,6 @@
 import Constants from '../constants';
 
-export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II', 'LL', 'TT', 'rTT', 'lTT'];
+export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II', 'LL', 'TT', 'rTT', 'lTT', 'SS', 'ZZ'];
 export type Piece = typeof pieces[number];
 export type Rotation = 0 | 1 | 2 | 3;
 
@@ -538,6 +538,69 @@ export const getBlocks = (piece: Piece): number[][][] => {
           [0, 0, 0, 0, 0]
         ]
       ];
+    case 'SS':
+      return [
+        [
+          [0, 0, 0, 0, 0],
+          [0, 1, 1, 1, 0],
+          [1, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [1, 0, 0, 0, 0],
+          [1, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 0, 1, 1, 0],
+          [1, 1, 1, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [1, 0, 0, 0, 0],
+          [1, 0, 0, 0, 0],
+          [1, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ]
+      ];
+    case 'ZZ':
+      return [
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 0, 0, 0],
+          [0, 1, 1, 1, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 1, 0, 0, 0],
+          [1, 1, 0, 0, 0],
+          [1, 0, 0, 0, 0],
+          [1, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 0, 0],
+          [0, 0, 1, 1, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+
+        ],
+        [
+          [0, 0, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [1, 1, 0, 0, 0],
+          [1, 0, 0, 0, 0]
+        ]
+      ];
     default: {
       const exhaustiveCheck: never = piece;
       throw new Error(`Unhandled color case: ${exhaustiveCheck}`);
@@ -583,6 +646,10 @@ export const getClassName = (piece: Piece | 'ghost'): string => {
       return 'piece-rTT';
     case 'lTT':
       return 'piece-rTT';
+    case 'SS':
+      return 'piece-SS';
+    case 'ZZ':
+      return 'piece-ZZ';
     default: {
       const exhaustiveCheck: never = piece;
       throw new Error(`Unhandled piece case: ${exhaustiveCheck}`);

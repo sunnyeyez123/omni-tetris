@@ -507,7 +507,7 @@ export const getBlocks = (piece: Piece): number[][][] => {
           [0, 0, 0, 0, 0]
         ]
       ];
-      case 'lTT':
+    case 'lTT':
       return [
         [
           [0, 1, 0, 0, 0],

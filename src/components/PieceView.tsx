@@ -6,10 +6,10 @@ type Props = {
 };
 
 const defaultBlock = [
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0]
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0]
 ] as const;
 
 const PieceView: React.FC<Props> = ({ piece }): JSX.Element => {
@@ -25,7 +25,6 @@ const PieceView: React.FC<Props> = ({ piece }): JSX.Element => {
       } else {
         classString += 'block-empty';
       }
-
       return <td key={j} className={classString} />;
     });
 

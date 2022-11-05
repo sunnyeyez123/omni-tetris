@@ -1,6 +1,6 @@
 import Constants from '../constants';
 
-export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II', 'LL', 'TT', 'rTT'];
+export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II', 'LL', 'TT', 'rTT', 'lTT'];
 export type Piece = typeof pieces[number];
 export type Rotation = 0 | 1 | 2 | 3;
 
@@ -495,6 +495,37 @@ export const getBlocks = (piece: Piece): number[][][] => {
         [
           [0, 0, 0, 0, 0],
           [1, 1, 1, 1, 0],
+          [0, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 1, 0, 0, 0],
+          [1, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ]
+      ];
+      case 'lTT':
+      return [
+        [
+          [0, 1, 0, 0, 0],
+          [1, 1, 1, 1, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 1, 0, 0, 0],
+          [0, 1, 1, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0],
           [0, 0, 1, 0, 0],
           [0, 0, 0, 0, 0],
           [0, 0, 0, 0, 0]
@@ -549,6 +580,8 @@ export const getClassName = (piece: Piece | 'ghost'): string => {
     case 'TT':
       return 'piece-TT';
     case 'rTT':
+      return 'piece-rTT';
+    case 'lTT':
       return 'piece-rTT';
     default: {
       const exhaustiveCheck: never = piece;

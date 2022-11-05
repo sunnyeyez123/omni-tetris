@@ -1,6 +1,6 @@
 import Constants from '../constants';
 
-export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II'];
+export const pieces = <const>['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'i', 'ii', 'll', 'lOO', 'rOO', 'II', 'LL'];
 export type Piece = typeof pieces[number];
 export type Rotation = 0 | 1 | 2 | 3;
 
@@ -414,6 +414,37 @@ export const getBlocks = (piece: Piece): number[][][] => {
           [0, 0, 0, 0, 0]
         ]
       ];
+    case 'LL':
+      return [
+        [
+          [0, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 1, 1, 1, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 0, 0],
+          [1, 0, 0, 0, 0],
+          [1, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [1, 1, 1, 0, 0],
+          [0, 0, 1, 0, 0],
+          [0, 0, 1, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        [
+          [0, 0, 1, 0, 0],
+          [1, 1, 1, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ]
+      ];
     default: {
       const exhaustiveCheck: never = piece;
       throw new Error(`Unhandled color case: ${exhaustiveCheck}`);
@@ -451,6 +482,8 @@ export const getClassName = (piece: Piece | 'ghost'): string => {
       return 'piece-rOO';
     case 'II':
       return 'piece-II';
+    case 'LL':
+      return 'piece-LL';
     default: {
       const exhaustiveCheck: never = piece;
       throw new Error(`Unhandled piece case: ${exhaustiveCheck}`);
